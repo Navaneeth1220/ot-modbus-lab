@@ -1,0 +1,1 @@
+11/06/2026-11:15:02.272357  [**] [1:1000001:1] OT UNAUTHORIZED Modbus write to PLC from non-HMI host [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 172.30.0.66:42922 -> 172.30.0.10:502

@@ -1,0 +1,12 @@
+# OT Modbus detection — unauthorized writes to the PLC
+# Sanctioned HMI = 172.30.0.50   |   PLC = 172.30.0.10
+#
+# Fires on ANY Modbus write (FC5/6/15/16) sent to the PLC
+# from any source that is NOT the sanctioned HMI.
+alert modbus !172.30.0.50 any -> 172.30.0.10 502 ( \
+    msg:"OT UNAUTHORIZED Modbus write to PLC from non-HMI host"; \
+    flow:established,to_server; \
+    modbus: access write; \
+    sid:1000001; rev:1; \
+    classtype:attempted-admin; \
+)
